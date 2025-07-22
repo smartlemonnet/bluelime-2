@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 262.1 83.3% 57.8%; /* Purple */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 262.1 83.3% 57.8%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 72.2% 50.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 262.1 83.3% 57.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .element-outline {
+    transition: border-color 0.2s ease-in-out;
+  }
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: hsl(var(--secondary));
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground));
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.8);
+  }
+
+  /* Gradient Text Colors */
+  .text-gradient-blue {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400;
+  }
+  .text-gradient-purple {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400;
+  }
+  .text-gradient-pink {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-rose-400;
+  }
+  .text-gradient-green {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400;
+  }
+  .text-gradient-yellow {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-400;
+  }
+  .text-gradient-orange {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400;
+  }
+  .text-gradient-red {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-rose-400;
+  }
+
+  /* RND resize handles */
+  .react-draggable .react-resizable-handle {
+    background-color: hsl(var(--primary)) !important;
+    border-radius: 2px !important;
+    width: 8px !important;
+    height: 8px !important;
+    opacity: 0.7 !important;
+    z-index: 1000 !important;
+  }
+  .react-draggable .react-resizable-handle-n { bottom: auto; top: -4px; left: 50%; transform: translateX(-50%); cursor: ns-resize; }
+  .react-draggable .react-resizable-handle-s { top: auto; bottom: -4px; left: 50%; transform: translateX(-50%); cursor: ns-resize; }
+  .react-draggable .react-resizable-handle-e { left: auto; right: -4px; top: 50%; transform: translateY(-50%); cursor: ew-resize; }
+  .react-draggable .react-resizable-handle-w { right: auto; left: -4px; top: 50%; transform: translateY(-50%); cursor: ew-resize; }
+  .react-draggable .react-resizable-handle-ne { right: -4px; top: -4px; cursor: nesw-resize; }
+  .react-draggable .react-resizable-handle-nw { left: -4px; top: -4px; cursor: nwse-resize; }
+  .react-draggable .react-resizable-handle-se { right: -4px; bottom: -4px; cursor: nwse-resize; }
+  .react-draggable .react-resizable-handle-sw { left: -4px; bottom: -4px; cursor: nesw-resize; }
+}
+
+.radix-select-content-class {
+  z-index: 50000 !important; 
+}
